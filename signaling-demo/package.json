@@ -1,0 +1,20 @@
+{
+  "name": "webrtc-demo",
+  "version": "1.0.0",
+  "description": "",
+  "main": "signalingServer.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Major Tom",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.2",
+    "fs": "^0.0.1-security",
+    "http": "^0.0.1-security",
+    "https": "^1.0.0",
+    "log4js": "^6.3.0",
+    "serve-index": "^1.9.1",
+    "socket.io": "^4.4.0"
+  }
+}
