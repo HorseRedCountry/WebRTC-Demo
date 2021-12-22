@@ -1,0 +1,16 @@
+<html>
+    <head>
+        <script src="/socket.io/socket.io.js"></script>
+        <script>
+            window.onload = function(){
+                let socket = io.connect('/');
+                socket.on('connect', function(){
+                   socket.send('hello world!');
+                });
+                socket.on('message', function(data){
+                    alert(data);
+                });
+            }
+        </script>
+    </head>
+</html>
