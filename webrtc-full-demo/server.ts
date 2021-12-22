@@ -1,5 +1,5 @@
 //设置当前进程标题
-process.title = 'signaling-server';
+process.title = 'webrtc-full-demo';
 
 //文件读取
 import * as fs from 'fs';
@@ -107,6 +107,7 @@ const runHttpsServer = () => {
 		logger.info(`Listening at 443...`);
 	});
 }
+//
 
 const runWebSocketServer = async () => {
 	io = socketio.listen(httpsServer, {
