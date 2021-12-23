@@ -110,8 +110,12 @@ const runHttpsServer = () => {
 
 const runWebSocketServer = async () => {
 	io = socketio.listen(httpsServer, {
+		//有多少ms没有乒乓包考虑连接close
 		pingTimeout: 3000,
+		//发送新的ping packet之前有多少ms
 		pingInterval: 5000,
+		//这两个参数将在客户端知道服务器不再可用之前影响延迟。例如，如果底层TCP连接由于网络问题
+		//而未正确关闭，则pingTimeout + pingInterval在获取disconnect事件之前，客户端可能必须等待最多ms 
 	});
 
 	logger.info("Running socketio server....");
@@ -126,7 +130,7 @@ const runWebSocketServer = async () => {
 		}
 
 		logger.info('connection request [roomId:"%s", peerId:"%s"]', roomId, peerId);
-
+ 
 		try {
 			const room = await getOrCreateRoom(roomId);
 			let peer = room.getPeer(peerId);
