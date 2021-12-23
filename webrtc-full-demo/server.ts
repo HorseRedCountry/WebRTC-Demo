@@ -107,7 +107,6 @@ const runHttpsServer = () => {
 		logger.info(`Listening at 443...`);
 	});
 }
-//
 
 const runWebSocketServer = async () => {
 	io = socketio.listen(httpsServer, {
